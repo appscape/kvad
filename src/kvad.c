@@ -218,7 +218,6 @@ static void _kvad_node_release(kvad_node* node) {
         // Non-leaf node: first free subnodes..
         for (size_t i=0;i<4;i++) {
             _kvad_node_release(node->subnodes[i]);
-            free(node->subnodes[i]);
         }
     } else {
         // Leaf node: free data..
